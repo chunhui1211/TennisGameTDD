@@ -15,6 +15,10 @@ namespace TennisGameTDD
             {
                 return "Fifteen Love";
             }
+            if (_homePlayerScore == 2)
+            {
+                return "Thirty Love";
+            }
             return "Love All";
         }
         public void HomePlayerScore()
