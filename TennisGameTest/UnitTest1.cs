@@ -8,6 +8,16 @@ namespace TennisGameTest
     public class UnitTest1
     {
         [TestMethod]
+        public void FortyLove()
+        {
+            var target = new TennisGame();
+            target.HomePlayerScore();
+            target.HomePlayerScore();
+            target.HomePlayerScore();
+            var actual = target.score();
+            Assert.AreEqual("Forty Love", actual);
+        }
+        [TestMethod]
         public void ThirtyLove()
         {
             var target = new TennisGame();
