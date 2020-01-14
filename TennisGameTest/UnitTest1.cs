@@ -15,17 +15,14 @@ namespace TennisGameTest
         [TestMethod]
         public void FortyLove()
         {
-            _target.HomePlayerScore();
-            _target.HomePlayerScore();
-            _target.HomePlayerScore();
+            GivenHomePlayerScore(3);
             var actual = _target.score();
             Assert.AreEqual("Forty Love", actual);
         }
         [TestMethod]
         public void ThirtyLove()
         {
-            _target.HomePlayerScore();
-            _target.HomePlayerScore();
+            GivenHomePlayerScore(2);
             var actual = _target.score();
             Assert.AreEqual("Thirty Love", actual);
         }
@@ -41,6 +38,13 @@ namespace TennisGameTest
         {
             var actual = _target.score();
             Assert.AreEqual("Love All", actual);
+        }
+        private void GivenHomePlayerScore(int times)
+        {
+            for (var i = 0; i < times; i++)
+            {
+                _target.HomePlayerScore();
+            }
         }
         
     }
