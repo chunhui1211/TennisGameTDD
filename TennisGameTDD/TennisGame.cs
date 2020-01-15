@@ -23,14 +23,7 @@ namespace TennisGameTDD
         }
         public string score()
         {
-            if (_homePlayerScore >= 3 && _awayPlayerScore>=3)
-            {
-                if (Math.Abs(_homePlayerScore - _awayPlayerScore) == 1)
-                {
-                    var advPlayer = _homePlayerScore > _awayPlayerScore ? "John" : "Tom";
-                    return $"{advPlayer} Adv";
-                }
-            }
+
             if (_homePlayerScore == _awayPlayerScore)
             {
                 if (_homePlayerScore >= 3)
@@ -38,6 +31,15 @@ namespace TennisGameTDD
                     return "Deuce";
                 }
                 return $"{_scoreMappings[_homePlayerScore]} All";
+            }
+            if (_homePlayerScore >= 3 && _awayPlayerScore>=3)
+            {
+                var advPlayer = _homePlayerScore > _awayPlayerScore ? "John" : "Tom";
+                if (Math.Abs(_homePlayerScore - _awayPlayerScore) == 1)
+                {
+                    return $"{advPlayer} Adv";
+                }
+                return $"{advPlayer} Win";
             }
             if (_homePlayerScore > 0 || _awayPlayerScore>0)
             {
