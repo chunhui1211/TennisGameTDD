@@ -23,16 +23,12 @@ namespace TennisGameTDD
         }
         public string score()
         {
-            if (_homePlayerScore == 4 && _awayPlayerScore == 4)
-            {
-                return "Deuce";
-            }
-            if (_homePlayerScore == 3 && _awayPlayerScore == 3)
-            {
-                return "Deuce";
-            }
             if (_homePlayerScore == _awayPlayerScore)
             {
+                if (_homePlayerScore >= 3)
+                {
+                    return "Deuce";
+                }
                 return $"{_scoreMappings[_homePlayerScore]} All";
             }
             if (_homePlayerScore > 0 || _awayPlayerScore>0)
