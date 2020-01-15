@@ -23,6 +23,10 @@ namespace TennisGameTDD
         }
         public string score()
         {
+            if (_homePlayerScore == 1 && _awayPlayerScore == 1)
+            {
+                return "Fifteen All";
+            }
             if (_homePlayerScore > 0 || _awayPlayerScore>0)
             {
                 return $"{_scoreMappings[_homePlayerScore]} {_scoreMappings[_awayPlayerScore]}";
