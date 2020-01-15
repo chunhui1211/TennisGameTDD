@@ -15,6 +15,7 @@ namespace TennisGameTDD
         {
             _scoreMappings = new Dictionary<int, string>()
             {
+                { 0,"Love"},
                 { 1,"Fifteen"},
                 { 2,"Thirty"},
                 { 3,"Forty"}
@@ -22,17 +23,9 @@ namespace TennisGameTDD
         }
         public string score()
         {
-            if (_awayPlayerScore == 1)
+            if (_homePlayerScore > 0 || _awayPlayerScore>0)
             {
-                return "Love Fifteen";
-            }
-            if (_awayPlayerScore == 2)
-            {
-                return "Love Thirty";
-            }
-            if (_homePlayerScore > 0)
-            {
-                return $"{_scoreMappings[_homePlayerScore]} Love";
+                return $"{_scoreMappings[_homePlayerScore]} {_scoreMappings[_awayPlayerScore]}";
             }
             return "Love All";
         }
