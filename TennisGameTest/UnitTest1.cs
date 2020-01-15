@@ -13,6 +13,13 @@ namespace TennisGameTest
             _target = new TennisGame();
         }
         [TestMethod]
+        public void LoveFifteen()
+        {
+            _target.AwayPlayerScore();
+            var actual = _target.score();
+            Assert.AreEqual("Love Fifteen", actual);
+        }
+        [TestMethod]
         public void FortyLove()
         {
             GivenHomePlayerScore(3);

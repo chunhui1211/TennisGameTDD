@@ -9,6 +9,7 @@ namespace TennisGameTDD
     public class TennisGame
     {
         private int _homePlayerScore;
+        private int _awayPlayerScore;
         private Dictionary<int, string> _scoreMappings;
         public TennisGame()
         {
@@ -21,6 +22,10 @@ namespace TennisGameTDD
         }
         public string score()
         {
+            if (_awayPlayerScore == 1)
+            {
+                return "Love Fifteen";
+            }
             if (_homePlayerScore > 0)
             {
                 return $"{_scoreMappings[_homePlayerScore]} Love";
@@ -30,6 +35,10 @@ namespace TennisGameTDD
         public void HomePlayerScore()
         {
             _homePlayerScore++;
+        }
+        public void AwayPlayerScore()
+        {
+            _awayPlayerScore++;
         }
     }
 }
