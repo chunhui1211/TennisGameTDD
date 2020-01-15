@@ -23,6 +23,13 @@ namespace TennisGameTDD
         }
         public string score()
         {
+            if (_homePlayerScore >= 3 && _awayPlayerScore>=3)
+            {
+                if (_homePlayerScore - _awayPlayerScore == 1)
+                {
+                    return "John Adv";
+                }
+            }
             if (_homePlayerScore == _awayPlayerScore)
             {
                 if (_homePlayerScore >= 3)
