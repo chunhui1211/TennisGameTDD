@@ -23,6 +23,10 @@ namespace TennisGameTDD
         }
         public string score()
         {
+            if (_homePlayerScore == 4 && _awayPlayerScore == 4)
+            {
+                return "Deuce";
+            }
             if (_homePlayerScore == 3 && _awayPlayerScore == 3)
             {
                 return "Deuce";
