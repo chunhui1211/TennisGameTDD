@@ -26,6 +26,10 @@ namespace TennisGameTDD
             {
                 return "Love Fifteen";
             }
+            if (_awayPlayerScore == 2)
+            {
+                return "Love Thirty";
+            }
             if (_homePlayerScore > 0)
             {
                 return $"{_scoreMappings[_homePlayerScore]} Love";
