@@ -23,6 +23,10 @@ namespace TennisGameTDD
         }
         public string score()
         {
+            if (_homePlayerScore == 2 && _awayPlayerScore == 2)
+            {
+                return "Thirty All";
+            }
             if (_homePlayerScore == 1 && _awayPlayerScore == 1)
             {
                 return "Fifteen All";
