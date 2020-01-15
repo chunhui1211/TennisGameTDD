@@ -15,8 +15,7 @@ namespace TennisGameTest
         [TestMethod]
         public void LoveThirty()
         {
-            _target.AwayPlayerScore();
-            _target.AwayPlayerScore();
+            GivenAwayPlayerScore(2);
             var actual = _target.score();
             Assert.AreEqual("Love Thirty", actual);
         }
@@ -61,6 +60,13 @@ namespace TennisGameTest
                 _target.HomePlayerScore();
             }
         }
-        
+        private void GivenAwayPlayerScore(int times)
+        {
+            for (var i = 0; i < times; i++)
+            {
+                _target.AwayPlayerScore();
+            }
+        }
+
     }
 }
